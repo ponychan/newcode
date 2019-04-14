@@ -2,10 +2,6 @@
 #include"RFAPI.c"
 
 
-
-
-
-
 /******************************
 RF控制管脚状态初始化
 ******************************/
@@ -82,3 +78,26 @@ void RFCtlLineInit()
     }
   //API_Get_All_IntStatus(0x08,IntStatus);//读取中断标志，清除中断标志位
 }
+
+
+/**********************************************************************
+对一个寄存器进行设置
+形参：group:该寄存器所属的组
+      address：该寄存器的地址
+      Data：对该寄存器配置的数据
+返回值：0：对寄存器的设置成功
+        1：对寄存器的设置失败
+**********************************************************************/
+ uchar API_SET_PROPERTY_1(unsigned char group,unsigned char address,unsigned char Data)
+ {
+    uchar API_WRITER[5];
+    API_WRITER[0]=CMD_SET_PROPERTY; 
+    API_WRITER[1]=group;
+    API_WRITER[2]=0X01;
+    API_WRITER[3]=address;
+    API_WRITER[4]=Data;
+    API_SendCommand(0x05,API_WRITER);
+    if(API_WaitforCTS())
+      return 0x01;
+    return 0x00;
+ }
