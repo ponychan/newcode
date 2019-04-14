@@ -50,10 +50,10 @@
 /*Property Summary*/
 /**********************************
 GLOBAL group:0x00
-定义格式：组名称宏定义，组内地址宏定义
+定义格式：第一行是组名称宏定义，后面是组内地址宏定义
 ***********************************/
 #define Group_GLOBAL                  0x00          //组名称定义
-#define ad_GLOBAL_XO_TUNE             0x00
+#define ad_GLOBAL_XO_TUNE             0x00          
 #define ad_GLOBAL_CLK_CFG             0x01
 #define ad_GLOBAL_LOW_BATT_THRESH     0x02
 #define ad_GLOBAL_CONFIG              0x03
