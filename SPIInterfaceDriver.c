@@ -1,13 +1,16 @@
-//SPI Interface Driver
-#define  uchar unsigned char
+/*SPI Interface Driver。本文件由RF.c调用。包含写一个字节、写多个字节、读取4463射频芯片的反馈、读取S4463芯片的CTS发送清除信号四个方法
+这四个方法经过封装，暴露出三个方法，API_SendCommand、API_GetResponse和API_WaitforCTS*/
 
-
+/*******************************
+CTS校验最大值配置
+********************************/
+#define MAX_CTS_RETRY 2500     //定义CTS读取最多2500次，否则视为错误
 /**************************************
-发送一个字节的数据
+在SPI接口发送一个字节的数据
 形参：Data需要发送的数据
 返回值：无
 ****************************************/
-void  API_SendDataByte(uchar Data)   //子函数
+void  API_SendDataByte(uchar Data)
 {
      unsigned char i; 
 
@@ -31,7 +34,7 @@ void  API_SendDataByte(uchar Data)   //子函数
 }
 
 /***************************************
-发送多个字节的数据，不获取返回值
+在SPI接口发送多个字节的数据，不获取返回值
 形参：DataLength发送数据长度
       *Data：数组头指针
 返回值：无
@@ -66,12 +69,12 @@ void API_SendDataNoResponse(uchar DataLength,uchar *Data)   //子函数
 }
 
 /************************************************
-得到发送数据的返回值，仅仅是获取输出字节的函数
+得到发送数据的返回值
 形参：DataLength返回值的长度
       *Data存储返回值数组的头指针
 返回值：无
 ************************************************/
-void API_SendDataGetResponse(uchar DataLength,uchar *Data)
+void API_GetResponseofSendData(uchar DataLength,uchar *Data)
 {
   unsigned char i;
   unsigned char data_out=0x00;
@@ -126,7 +129,7 @@ uchar API_GetResponse(uchar DataLength,uchar *Data)
     {
       NSEL_OUT_L;
       API_SendDataByte(CMD_READ_CMD_BUFF);   //发送READ_CMD_BUFFER命令
-      API_SendDataGetResponse(1,&CTS_value);
+      API_GetResponseofSendData(1,&CTS_value);
       if(CTS_value!=0xff)
         {
           CTS_value=0;
@@ -137,7 +140,7 @@ uchar API_GetResponse(uchar DataLength,uchar *Data)
          return 1;
         }
     }
-     API_SendDataGetResponse(DataLength,Data); //CTS完成后可以读取BUFFER的值
+     API_GetResponseofSendData(DataLength,Data); //CTS完成后可以读取BUFFER的值
      NSEL_OUT_H;
      return 0;
 }
@@ -155,7 +158,7 @@ uchar API_WaitforCTS(void)
      {
         NSEL_OUT_L;
         API_SendDataByte(CMD_READ_CMD_BUFF);
-        API_SendDataGetResponse(1,&CTS_value);
+        API_GetResponseofSendData(1,&CTS_value);
         NSEL_OUT_H;
         if(++CTS_err>=MAX_CTS_RETRY)
            { 
@@ -163,5 +166,5 @@ uchar API_WaitforCTS(void)
              return 1;
            }
      }
-         return 0; 
-}   
+     return 0; 
+}

@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.5.1.95                                          #
 #                                                                              #
-#           Link time     =  15/Apr/2019  10:01:41                             #
+#           Link time     =  15/Apr/2019  14:04:06                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  D:\J大三春\41创新项目综合训练（二）\1.水稻飞虱\ne #
 #                            wcode\Debug\List\newproject.map                   #
@@ -11,7 +11,7 @@
 #                            Format: ubrof10                                   #
 #                            UBROF version 10.0.6                              #
 #                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f C:\WINDOWS\TEMP\EW9565.tmp                     #
+#           Command line  =  -f C:\WINDOWS\TEMP\EW8541.tmp                     #
 #                            (D:\J大三春\41创新项目综合训练（二）\1.水稻飞虱\n #
 #                            ewcode\Debug\Obj\main.r43                         #
 #                            -o                                                #
@@ -139,8 +139,20 @@ Absolute parts
   SEGMENTS IN THE MODULE
   ======================
 DATA16_AN
+  Relative segment, address: 0200 - 0201 (0x2 bytes), align: 0
+  Segment part 1. ROOT 
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           _A_PAIN_L               0200 
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           PAIN                    0200 
+           PAIN_H                  0201 
+           PAIN_L                  0200 
+    -------------------------------------------------------------------------
+DATA16_AN
   Relative segment, address: 0202 - 0203 (0x2 bytes), align: 0
-  Segment part 1. ROOT        Intra module refs:   LedRedOff
+  Segment part 2. ROOT        Intra module refs:   LedRedOff
                                                    LedRedOn
                                                    LowPowerPinInit
                                                    RFCtlLineInit
@@ -155,7 +167,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0204 - 0205 (0x2 bytes), align: 0
-  Segment part 2. ROOT        Intra module refs:   LedRedOff
+  Segment part 3. ROOT        Intra module refs:   LedRedOff
                                                    LedRedOn
                                                    LowPowerPinInit
                                                    RFCtlLineInit
@@ -170,7 +182,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0206 - 0207 (0x2 bytes), align: 0
-  Segment part 3. ROOT        Intra module refs:   LowPowerPinInit
+  Segment part 4. ROOT        Intra module refs:   LowPowerPinInit
                                                    RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -183,7 +195,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0218 - 0219 (0x2 bytes), align: 0
-  Segment part 4. ROOT        Intra module refs:   RFCtlLineInit
+  Segment part 5. ROOT        Intra module refs:   RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PAIES_L              0218 
@@ -195,7 +207,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 021A - 021B (0x2 bytes), align: 0
-  Segment part 5. ROOT        Intra module refs:   RFCtlLineInit
+  Segment part 6. ROOT        Intra module refs:   RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PAIE_L               021A 
@@ -207,7 +219,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 021C - 021D (0x2 bytes), align: 0
-  Segment part 6. ROOT        Intra module refs:   RFCtlLineInit
+  Segment part 7. ROOT        Intra module refs:   RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PAIFG_L              021C 
@@ -219,7 +231,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0222 - 0223 (0x2 bytes), align: 0
-  Segment part 7. ROOT        Intra module refs:   LowPowerPinInit
+  Segment part 8. ROOT        Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PBOUT_L              0222 
@@ -231,7 +243,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0224 - 0225 (0x2 bytes), align: 0
-  Segment part 8. ROOT        Intra module refs:   LowPowerPinInit
+  Segment part 9. ROOT        Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PBDIR_L              0224 
@@ -243,7 +255,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0226 - 0227 (0x2 bytes), align: 0
-  Segment part 9. ROOT        Intra module refs:   LowPowerPinInit
+  Segment part 10. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PBREN_L              0226 
@@ -255,7 +267,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0242 - 0243 (0x2 bytes), align: 0
-  Segment part 10. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 11. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PCOUT_L              0242 
@@ -267,7 +279,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0244 - 0245 (0x2 bytes), align: 0
-  Segment part 11. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 12. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PCDIR_L              0244 
@@ -279,7 +291,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0246 - 0247 (0x2 bytes), align: 0
-  Segment part 12. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 13. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PCREN_L              0246 
@@ -291,7 +303,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 024A - 024B (0x2 bytes), align: 0
-  Segment part 13. ROOT       Intra module refs:   SetDCOClk
+  Segment part 14. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -304,7 +316,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0260 - 0261 (0x2 bytes), align: 0
-  Segment part 14. ROOT 
+  Segment part 15. ROOT       Intra module refs:   API_GetResponseofSendData
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PDIN_L               0260 
@@ -316,8 +328,15 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0262 - 0263 (0x2 bytes), align: 0
-  Segment part 15. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 16. ROOT       Intra module refs:   API_GetResponse
+                                                   API_GetResponseofSendData
+                                                   API_SendCommand
+                                                   API_SendDataByte
+                                                   API_SendDataNoResponse
+                                                   LowPowerPinInit
                                                    RFCtlLineInit
+                                                   SetRFOff
+                                                   SetRFOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PDOUT_L              0262 
@@ -329,7 +348,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0264 - 0265 (0x2 bytes), align: 0
-  Segment part 16. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 17. ROOT       Intra module refs:   LowPowerPinInit
                                                    RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -342,7 +361,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0266 - 0267 (0x2 bytes), align: 0
-  Segment part 17. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 18. ROOT       Intra module refs:   LowPowerPinInit
                                                    RFCtlLineInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -355,7 +374,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 026A - 026B (0x2 bytes), align: 0
-  Segment part 18. ROOT       Intra module refs:   SetDCOClk
+  Segment part 19. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -368,7 +387,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0282 - 0283 (0x2 bytes), align: 0
-  Segment part 19. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 20. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PEOUT_L              0282 
@@ -380,7 +399,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0284 - 0285 (0x2 bytes), align: 0
-  Segment part 20. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 21. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PEDIR_L              0284 
@@ -392,7 +411,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0286 - 0287 (0x2 bytes), align: 0
-  Segment part 21. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 22. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PEREN_L              0286 
@@ -404,7 +423,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 02A2 - 02A3 (0x2 bytes), align: 0
-  Segment part 22. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 23. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PFOUT_L              02A2 
@@ -416,7 +435,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 02A4 - 02A5 (0x2 bytes), align: 0
-  Segment part 23. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 24. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PFDIR_L              02A4 
@@ -428,7 +447,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 02A6 - 02A7 (0x2 bytes), align: 0
-  Segment part 24. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 25. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PFREN_L              02A6 
@@ -440,7 +459,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0322 - 0323 (0x2 bytes), align: 0
-  Segment part 25. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 26. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PJOUT_L              0322 
@@ -452,7 +471,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0324 - 0325 (0x2 bytes), align: 0
-  Segment part 26. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 27. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PJDIR_L              0324 
@@ -464,7 +483,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0326 - 0327 (0x2 bytes), align: 0
-  Segment part 27. ROOT       Intra module refs:   LowPowerPinInit
+  Segment part 28. ROOT       Intra module refs:   LowPowerPinInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_PJREN_L              0326 
@@ -476,7 +495,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0100 - 0101 (0x2 bytes), align: 0
-  Segment part 28. ROOT       Intra module refs:   InitClk
+  Segment part 29. ROOT       Intra module refs:   InitClk
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_SFRIE1_L             0100 
@@ -488,7 +507,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0102 - 0103 (0x2 bytes), align: 0
-  Segment part 29. ROOT       Intra module refs:   SetDCOClk
+  Segment part 30. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -501,7 +520,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0160 - 0161 (0x2 bytes), align: 0
-  Segment part 30. ROOT       Intra module refs:   SetDCOClk
+  Segment part 31. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -514,7 +533,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0162 - 0163 (0x2 bytes), align: 0
-  Segment part 31. ROOT       Intra module refs:   SetDCOClk
+  Segment part 32. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -527,7 +546,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0164 - 0165 (0x2 bytes), align: 0
-  Segment part 32. ROOT       Intra module refs:   SetDCOClk
+  Segment part 33. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -540,7 +559,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0166 - 0167 (0x2 bytes), align: 0
-  Segment part 33. ROOT       Intra module refs:   SetDCOClk
+  Segment part 34. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -553,7 +572,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 0168 - 0169 (0x2 bytes), align: 0
-  Segment part 34. ROOT       Intra module refs:   SetDCOClk
+  Segment part 35. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -566,7 +585,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 016C - 016D (0x2 bytes), align: 0
-  Segment part 35. ROOT       Intra module refs:   SetDCOClk
+  Segment part 36. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -579,7 +598,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 016E - 016F (0x2 bytes), align: 0
-  Segment part 36. ROOT       Intra module refs:   SetDCOClk
+  Segment part 37. ROOT       Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -592,7 +611,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_AN
   Relative segment, address: 015C - 015D (0x2 bytes), align: 0
-  Segment part 37. ROOT       Intra module refs:   InitClk
+  Segment part 38. ROOT       Intra module refs:   InitClk
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_WDTCTL_L             015C 
@@ -604,7 +623,7 @@ DATA16_AN
     -------------------------------------------------------------------------
 DATA16_Z
   Relative segment, address: 1C02 - 1C02 (0x1 bytes), align: 0
-  Segment part 40.            Intra module refs:   SetDCOClk
+  Segment part 41.            Intra module refs:   SetDCOClk
                                                    SetXT2ClkOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -612,7 +631,7 @@ DATA16_Z
     -------------------------------------------------------------------------
 DATA16_I
   Relative segment, address: 1C00 - 1C00 (0x1 bytes), align: 0
-  Segment part 41.            Intra module refs:   InitClk
+  Segment part 42.            Intra module refs:   InitClk
                                                    InitSystem
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
@@ -620,99 +639,180 @@ DATA16_I
     -------------------------------------------------------------------------
 DATA16_I
   Relative segment, address: 1C01 - 1C01 (0x1 bytes), align: 0
-  Segment part 43.            Intra module refs:   InitSystem
+  Segment part 44.            Intra module refs:   InitSystem
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            g_uchPHYSMclkSet        1C01 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 5C2A - 5CBF (0x96 bytes), align: 1
-  Segment part 45.            Intra module refs:   InitSystem
+  Segment part 47.            Intra module refs:   InitSystem
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            LowPowerPinInit         5C2A 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5D96 - 5DF7 (0x62 bytes), align: 1
-  Segment part 46.            Intra module refs:   InitClk
+  Relative segment, address: 5E0E - 5E6F (0x62 bytes), align: 1
+  Segment part 48.            Intra module refs:   InitClk
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetDCOClk               5D96 
+           SetDCOClk               5E0E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5D34 - 5D95 (0x62 bytes), align: 1
-  Segment part 47.            Intra module refs:   InitClk
+  Relative segment, address: 5DAC - 5E0D (0x62 bytes), align: 1
+  Segment part 49.            Intra module refs:   InitClk
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetXT2ClkOn             5D34 
+           SetXT2ClkOn             5DAC 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5E3E - 5E65 (0x28 bytes), align: 1
-  Segment part 48.            Intra module refs:   InitSystem
+  Relative segment, address: 5F90 - 5FB7 (0x28 bytes), align: 1
+  Segment part 50.            Intra module refs:   InitSystem
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           InitClk                 5E3E 
+           InitClk                 5F90 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EB0 - 5EBB (0xc bytes), align: 1
-  Segment part 49.            Intra module refs:   HWResetRF
+  Relative segment, address: 6054 - 605F (0xc bytes), align: 1
+  Segment part 51.            Intra module refs:   HWResetRF
+                                                   SetRFOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           PHYMCLKSoftDelay1ms     5EB0 
+           PHYMCLKSoftDelay1ms     6054 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EBC - 5EC5 (0xa bytes), align: 1
-  Segment part 54.            Intra module refs:   HWResetRF
+  Relative segment, address: 5FB8 - 5FDB (0x24 bytes), align: 1
+  Segment part 54.            Intra module refs:   API_GetResponse
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           LedRedOn                5EBC 
+           API_SendDataByte        5FB8 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EC6 - 5ECF (0xa bytes), align: 1
-  Segment part 55.            Intra module refs:   HWResetRF
+  Relative segment, address: 5F04 - 5F33 (0x30 bytes), align: 1
+  Segment part 55.            Intra module refs:   API_SendCommand
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           LedRedOff               5EC6 
+           API_SendDataNoResponse
+                                   5F04 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5CC0 - 5D33 (0x74 bytes), align: 1
-  Segment part 59.            Intra module refs:   HWResetRF
+  Relative segment, address: 5F34 - 5F63 (0x30 bytes), align: 1
+  Segment part 56.            Intra module refs:   API_GetResponse
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           RFCtlLineInit           5CC0 
+           API_GetResponseofSendData
+                                   5F34 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5DF8 - 5E3D (0x46 bytes), align: 1
-  Segment part 60.            Intra module refs:   InitSystem
+  Relative segment, address: 6034 - 6043 (0x10 bytes), align: 1
+  Segment part 57.            Intra module refs:   API_Get_All_IntStatus
+                                                   API_PART_INFO
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           HWResetRF               5DF8 
+           API_SendCommand         6034 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5E66 - 5E79 (0x14 bytes), align: 1
-  Segment part 62.            Intra module refs:   main
+  Relative segment, address: 5E70 - 5EC5 (0x56 bytes), align: 1
+  Segment part 58.            Intra module refs:   API_Get_All_IntStatus
+                                                   API_PART_INFO
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           InitSystem              5E66 
+           API_GetResponse         5E70 
+               calls direct
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1C03 - 1C03 (0x1 bytes), align: 0
+  Segment part 46.            Intra module refs:   SetRFOff
+                                                   SetRFOn
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           g_uchrRFMode            1C03 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 5D38 - 5DAB (0x74 bytes), align: 1
+  Segment part 60.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           RFCtlLineInit           5D38 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 5EC6 - 5F03 (0x3e bytes), align: 1
+  Segment part 61.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           API_Get_All_IntStatus   5EC6 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5ED8 - 5EDB (0x4 bytes), align: 1
-  Segment part 63.
+  Relative segment, address: 5F64 - 5F8F (0x2c bytes), align: 1
+  Segment part 66.            Intra module refs:   HWResetRF
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    5ED8            Segment part 27 (?cstart)
+           API_PART_INFO           5F64 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 6060 - 6069 (0xa bytes), align: 1
+  Segment part 83.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LedRedOn                6060 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 606A - 6073 (0xa bytes), align: 1
+  Segment part 84.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           LedRedOff               606A 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 6074 - 607D (0xa bytes), align: 1
+  Segment part 86.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetRFOff                6074 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 5FDC - 5FF9 (0x1e bytes), align: 1
+  Segment part 87.            Intra module refs:   HWResetRF
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           SetRFOn                 5FDC 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 5CC0 - 5D37 (0x78 bytes), align: 1
+  Segment part 88.            Intra module refs:   InitSystem
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           HWResetRF               5CC0 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 5FFA - 600D (0x14 bytes), align: 1
+  Segment part 108.           Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           InitSystem              5FFA 
+               calls direct
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 607E - 6085 (0x8 bytes), align: 1
+  Segment part 109.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    607E            Segment part 27 (?cstart)
                calls direct
     -------------------------------------------------------------------------
 DATA16_ID
   Relative segment, address: 5C00 - 5C00 (0x1 bytes), align: 0
-  Segment part 42.            Intra module refs:   g_uchPHYSMclkSel
+  Segment part 43.            Intra module refs:   g_uchPHYSMclkSel
     -------------------------------------------------------------------------
 DATA16_ID
   Relative segment, address: 5C01 - 5C01 (0x1 bytes), align: 0
-  Segment part 44.            Intra module refs:   g_uchPHYSMclkSet
+  Segment part 45.            Intra module refs:   g_uchPHYSMclkSet
 
     *************************************************************************
 
@@ -722,11 +822,11 @@ DATA16_ID
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EE0 - 5EE1 (0x2 bytes), align: 1
+  Relative segment, address: 6092 - 6093 (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            5EE0            __exit (?__exit)
+           __DebugBreak            6092            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -734,11 +834,11 @@ DATA16_ID
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5E7A - 5E8D (0x14 bytes), align: 1
+  Relative segment, address: 600E - 6021 (0x14 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  5E7A            Segment part 6 (?_exit)
+           __exit                  600E            Segment part 6 (?_exit)
                                                    _exit (?_exit)
                calls direct
 
@@ -748,14 +848,14 @@ DATA16_ID
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5ED4, align: 1
+  Relative segment, address: 608E, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   5ED4            exit (?exit)
+           _exit                   608E            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5ED4 - 5ED7 (0x4 bytes), align: 1
+  Relative segment, address: 608E - 6091 (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -784,7 +884,7 @@ CODE_I
   Segment part 5.
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 5EE2, align: 1
+  Relative segment, address: 6094, align: 1
   Segment part 6.
     -------------------------------------------------------------------------
 DATA20_Z
@@ -796,11 +896,11 @@ DATA20_I
   Segment part 8.
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: 5EE2, align: 1
+  Relative segment, address: 6094, align: 1
   Segment part 9.
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 5EE2, align: 1
+  Relative segment, address: 6094, align: 1
   Segment part 10.
     -------------------------------------------------------------------------
 DATA20_N
@@ -822,6 +922,7 @@ CSTART
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?cstart_init_zero       5C06            g_uchPHYXt2Flag (main)
+                                                   g_uchrRFMode (main)
     -------------------------------------------------------------------------
 CSTART
   Relative segment, address: 5C12 - 5C21 (0x10 bytes), align: 1
@@ -840,7 +941,7 @@ CSTART
            ?cstart_end             5C2A 
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 5EE2, align: 1
+  Relative segment, address: 6094, align: 1
   Segment part 28.            Intra module refs:   Segment part 5
 
     -------------------------------------------------------------------------
@@ -861,11 +962,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5ED0 - 5ED3 (0x4 bytes), align: 1
+  Relative segment, address: 608A - 608D (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    5ED0            Segment part 27 (?cstart)
+           exit                    608A            Segment part 27 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -874,11 +975,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5E8E - 5E9F (0x12 bytes), align: 1
+  Relative segment, address: 6022 - 6033 (0x12 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memcpy                  5E8E            __data16_memcpy (?memzero)
+           memcpy                  6022            __data16_memcpy (?memzero)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memzero
@@ -886,18 +987,18 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EA0 - 5EAF (0x10 bytes), align: 1
+  Relative segment, address: 6044 - 6053 (0x10 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memzero        5EA0            ?cstart_init_zero (?cstart)
+           __data16_memzero        6044            ?cstart_init_zero (?cstart)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5EDC - 5EDF (0x4 bytes), align: 1
+  Relative segment, address: 6086 - 6089 (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memcpy         5EDC            ?cstart_init_copy (?cstart)
+           __data16_memcpy         6086            ?cstart_init_copy (?cstart)
                calls direct
 
 
@@ -916,7 +1017,7 @@ DATA16_AN                              0100 - 0103               4   rel    0
                                        015C - 015D               2 
                                        0160 - 0169               A 
                                        016C - 016F               4 
-                                       0202 - 0207               6 
+                                       0200 - 0207               8 
                                        0218 - 021D               6 
                                        0222 - 0227               6 
                                        0242 - 0247               6 
@@ -927,7 +1028,7 @@ DATA16_AN                              0100 - 0103               4   rel    0
                                        02A2 - 02A7               6 
                                        0322 - 0327               6 
 DATA16_I                               1C00 - 1C01               2   rel    1
-DATA16_Z                               1C02 - 1C02               1   rel    1
+DATA16_Z                               1C02 - 1C03               2   rel    1
 CODE_I                                    1C04                       rel    1
 DATA20_I                                  1C04                       rel    1
 DATA20_N                                  1C04                       rel    1
@@ -936,10 +1037,10 @@ CSTACK                                 5B60 - 5BFF              A0   rel    1
 DATA16_C                                  5C00                       dse    0
 DATA16_ID                              5C00 - 5C01               2   rel    1
 CSTART                                 5C02 - 5C29              28   rel    1
-<CODE> 1                               5C2A - 5EE1             2B8   rel    1
-CODE_ID                                   5EE2                       rel    1
-DATA20_ID                                 5EE2                       rel    1
-DATA20_C                                  5EE2                       rel    1
+<CODE> 1                               5C2A - 6093             46A   rel    1
+CODE_ID                                   6094                       rel    1
+DATA20_ID                                 6094                       rel    1
+DATA20_C                                  6094                       rel    1
 RESET                                  FFFE - FFFF               2   rel    1
 
                 ****************************************
@@ -948,9 +1049,9 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 738 bytes of CODE  memory
- 163 bytes of DATA  memory (+ 74 absolute )
-   2 bytes of CONST memory
+ 1 172 bytes of CODE  memory
+   164 bytes of DATA  memory (+ 76 absolute )
+     2 bytes of CONST memory
 
 Errors: none
 Warnings: none

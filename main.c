@@ -1,7 +1,7 @@
 #include<msp430.h>
 #include"ClockSet.c"
-#include"PinDefine.h"
-#include"RF.c"
+#include"RFAPI.c"
+
 
 void InitSystem(void){
     LowPowerPinInit();
@@ -15,5 +15,6 @@ void InitSystem(void){
 
 void main(void){
     InitSystem();
+    while(1);
 }
 

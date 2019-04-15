@@ -29,6 +29,8 @@
             <file>$PROJ_DIR$\Debug\List\newproject.map</file>
             <file>$PROJ_DIR$\ClockSet.c</file>
             <file>$PROJ_DIR$\Debug\Obj\RF.pbi</file>
+            <file>$TOOLKIT_DIR$\src\lib\dlib\__dbg_xxexit.c</file>
+            <file>$TOOLKIT_DIR$\src\lib\dlib\__dbg_break.c</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\RF.c</name>
@@ -62,11 +64,11 @@
             <inputs>
                 <tool>
                     <name>ICC430</name>
-                    <file> 17 6 13 18 22 12 8 7 14 4</file>
+                    <file> 17 6 13 18 22 14 8 12 4 7</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 13 6 14 12 22 8 4 17 18 7</file>
+                    <file> 13 14 12 22 6 7 17 18 8 4</file>
                 </tool>
             </inputs>
         </file>
