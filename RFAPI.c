@@ -1,5 +1,4 @@
-#define  uchar unsigned char
-
+#include"SPIInterfaceDriver.c"
 /*API接口可以做的事情：
 向射频芯片发送命令
 读取状态信息
@@ -20,7 +19,7 @@
 #define CMD_GET_INT_STATUS  0x20//返回所有可能的中断事件（STATUS和PENDING）的中断状态。可选地，它可以用于清除锁存（PENDING）中断事件。
 #define CMD_REQUEST_DEVICE_STATE 0x33//返回当前的河北状态和频段
 #define CMD_CHANGE_STATE    0x34//手动将芯片切换到所需的操作状态。
-    #define CMD_OFFLINE_RECAL   0x38//由于温度变化而重新校准。
+//    #define CMD_OFFLINE_RECAL   0x38//由于温度变化而重新校准。B1版本API没有本条
 #define CMD_READ_CMD_BUFF   0x44//用于读取CTS和命令响应。
 #define CMD_FRR_A_READ      0x50//从FRR_A开始读取快速响应寄存器（FRR）。
 #define CMD_FRR_B_READ      0x51//从FRR_B开始读取快速响应寄存器（FRR）。
@@ -29,10 +28,11 @@
 
 /*IR_CAL_COMMANDS*/
 #define CMD_IRCAL           0x17//图像抑制校准。
-    #define CMD_IRCAL_MANUAL    0x19//手动图像抑制校准。
+#define CMD_IRCAL_MANUAL    0x1a
+//    #define CMD_IRCAL_MANUAL    0x19//手动图像抑制校准。B1版本API没有本条
 /*TX_COMMANDS*/
 #define CMD_START_TX        0x31//切换到手动状态并开始传送数据包
-    #define CMD_TX_HOP          0x37//在TX中跳到新频率
+//    #define CMD_TX_HOP          0x37//在TX中跳到新频率B1版本API没有本条
 #define CMD_WRITE_TX_FIFO   0x66//将数据字节写入发送队列
 /*RX_COMMANDS*/
 #define CMD_PACKET_INFO     0x16//返回有关接收的最后一个数据包中变量字段长度的信息，并（可选）覆盖字段长度。
@@ -42,7 +42,7 @@
 #define CMD_READ_RX_FIFO    0x77//从RX FIFO读取数据字节。
 /*ADVANCED_COMMANDS*/
 #define CMD_GET_ADC_READING 0x14//使用辅助ADC执行转换并返回这些转换的结果。
-#define CMD_PROTOCOL_CFG    0x18//
+//#define CMD_PROTOCOL_CFG    0x18//B1和C2版本的API都没有本条
 #define CMD_GET_PH_STATUS   0x21//返回数据包处理程序中断组的中断状态（STATUS和PENDING）。可选地，它可以用于清除锁存（PENDING）中断事件。
 #define CMD_GET_CHIP_STATUS 0x23//返回芯片中断组的中断状态（STATUS和PENDING）。可选地，它可以用于清除锁存（PENDING）中断事件。
 
@@ -127,6 +127,14 @@ PREAMBLE  group:0x10   前导码寄存器
 #define ad_PREAMBLE_PATTERN_23_16     0x06
 #define ad_PREAMBLE_PATTERN_15_8      0x07
 #define ad_PREAMBLE_PATTERN_7_0       0x08
+/*chenkebao add*/
+#define ad_PREAMBLE_POSTAMBLE_CONFIG  0x09
+#define ad_PREAMBLE_POSTAMBLE_PATTERN31_24 0x0a
+#define ad_PREAMBLE_POSTAMBLE_PATTERN23_16 0x0b
+#define ad_PREAMBLE_POSTAMBLE_PATTERN15_8 0x0c
+#define ad_PREAMBLE_POSTAMBLE_PATTERN0_7 0x0d
+/*chenkebao add end*/
+
 //寄存器配置
 #define PREAMBLE_TX_LENGTH(x)             API_SET_PROPERTY_1(Group_PREAMBLE,ad_PREAMBLE_TX_LENGTH,x)      //0X0A
 #define PREAMBLE_CONFIG(x)                API_SET_PROPERTY_1(Group_PREAMBLE,ad_PREAMBLE_CONFIG,x)         //0X31
@@ -441,7 +449,7 @@ MATCH group:0x30
 #define ad_MATCH_MASK_2                       0x04
 #define ad_MATCH_CTRL_2                       0x05
 #define ad_MATCH_VALUE_3                      0x06
-#define ad_MATCH_ MASK_3                       0x07
+#define ad_MATCH_ MASK_3                      0x07
 #define ad_MATCH_CTRL_3                       0x08
 #define ad_MATCH_VALUE_4                      0x09
 #define ad_MATCH_MASK_4                       0x0a
@@ -556,6 +564,8 @@ extern void RFCtlLineInit(void);
 发送一个字节的数据
 */
 extern void  API_SendDataByte(uchar Data) ;
+
+
 /*
 发送多个字节的数据
 */
@@ -570,6 +580,9 @@ extern void API_SendDataGetResponse(uchar DataLength,uchar *Data);
 形参：命令长度，存储命令的数组头指针
 */
 extern uchar API_SendCommand(uchar CmdLength,uchar *CmdData);
+
+
+
 /*
 获取回复的数据
 形参：回复数据的长度，存储回复数据的数组头指针

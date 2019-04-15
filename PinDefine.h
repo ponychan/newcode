@@ -1,15 +1,3 @@
-/*======================================
-红灯与绿灯只需要设置输出方向和高低电平
-========================================*/
-//LED 红P2.2  绿P2.1
-#define PHY_LEDG_PxOUT        P2OUT      // ==输出电平的定义
-#define PHY_LEDG_PxDIR        P2DIR      //==输出或输入方向的定义
-#define PHY_LEDG_PxIN         BIT1       //==红灯管脚定义
-
-#define PHY_LEDR_PxOUT        P2OUT
-#define PHY_LEDR_PxDIR        P2DIR
-#define PHY_LEDR_PxIN         BIT2
-
 
 /*
 RF管脚定义：
