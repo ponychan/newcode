@@ -328,7 +328,7 @@ void FrequencyHop(unsigned char RFFreNum)
 {
     if(RFFreNum>(RF_FRE_AMOUNT-1))   //工作频道号大于最大频道号，则工作于最大频道号
         RFFreNum=RF_FRE_AMOUNT-1;
-    if(RFFreNum!=g_uchRFCurFreNum)
+    //if(RFFreNum!=g_uchRFCurFreNum)
     {
         //g_uchRFCurFreNum = RFFreNum;       //记录现在所处的工作频点
         SetRFRx();                         //完成跳频，并进入到接收模式
@@ -490,7 +490,7 @@ void SetRFRx()
     //unsigned char RF_Mode=g_uchrRFMode; 记录上次的状态，计算由上次状态转换成为本次状态所需要的时间
     unsigned char Command_Rx[7];
     Command_Rx[0]=CMD_START_RX;
-    / Command_Rx[1]=g_uchRFCurFreNum*3;          //现在的频点
+    // Command_Rx[1]=g_uchRFCurFreNum*3;          //现在的频点
     Command_Rx[2]=0x00;
     Command_Rx[3]=0x00;
     Command_Rx[4]=0x00;
@@ -657,23 +657,23 @@ void InitRFChipB470_Baud4000(void)
     RR_CTL_A_MODE(0x04);    //数据包处理挂起中断
     RR_CTL_B_MODE(0x0a);    //latch RSSI value as defined in MODEM_RSSI_CONTROL
     *快速反应寄存器C/D可根据实际情况进行设置*/
-    /FRR_CTL_C_MODE(0X00);
-    /FRR_CTL_D_MODE(0X00);
+    //FRR_CTL_C_MODE(0X00);
+    //FRR_CTL_D_MODE(0X00);
     
-    /PREAMBLE  前导码
+    //PREAMBLE  前导码
     REAMBLE_TX_LENGTH(0x0a);        //相同
     REAMBLE_CONFIG(0x31);
-    *0x14与0x0f为寄存器默认值，所以这里不需要设置，如果需要对
+    /*0x14与0x0f为寄存器默认值，所以这里不需要设置，如果需要对
     寄存器进行部分改变可修改此处*/
-    /PREAMBLE_CONFIG_STD1(0X14);  //RX前导码接受门限
-    /PREAMBLE_CONFIG_STD2(0X0F);  //RX接受前导码配置
+    //PREAMBLE_CONFIG_STD1(0X14);  //RX前导码接受门限
+    //PREAMBLE_CONFIG_STD2(0X0F);  //RX接受前导码配置
     
-    /SYNC   同步字                 //相同
+    //SYNC   同步字                 //相同
     YNC_CONFIG(0x01);   //两个字节的同步字，不是曼彻斯特编码，不是4FSK调制
     YNC_BITS_31_24(0xB4);
     YNC_BITS_23_16(0x2B);
     
-    /PKT_CRC_CONFIG  CRC种子选择
+    //PKT_CRC_CONFIG  CRC种子选择
     
     PKT_CRC_CONFIG(0x85);
     PKT_CONFIG1(0x02);  //new

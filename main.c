@@ -14,6 +14,7 @@ void InitSystem(void){
 }
 
 void main(void){
+  WDTCTL=WDTPW+WDTHOLD;
     InitSystem();
     while(1);
 }

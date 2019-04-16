@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V6.5.1.95                                          #
 #                                                                              #
-#           Link time     =  15/Apr/2019  14:04:06                             #
+#           Link time     =  16/Apr/2019  19:14:05                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  D:\J大三春\41创新项目综合训练（二）\1.水稻飞虱\ne #
 #                            wcode\Debug\List\newproject.map                   #
@@ -11,7 +11,7 @@
 #                            Format: ubrof10                                   #
 #                            UBROF version 10.0.6                              #
 #                            Using library modules for C-SPY (-rt)             #
-#           Command line  =  -f C:\WINDOWS\TEMP\EW8541.tmp                     #
+#           Command line  =  -f C:\WINDOWS\TEMP\EWAB1E.tmp                     #
 #                            (D:\J大三春\41创新项目综合训练（二）\1.水稻飞虱\n #
 #                            ewcode\Debug\Obj\main.r43                         #
 #                            -o                                                #
@@ -612,6 +612,7 @@ DATA16_AN
 DATA16_AN
   Relative segment, address: 015C - 015D (0x2 bytes), align: 0
   Segment part 38. ROOT       Intra module refs:   InitClk
+                                                   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            _A_WDTCTL_L             015C 
@@ -674,12 +675,12 @@ DATA16_I
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6054 - 605F (0xc bytes), align: 1
+  Relative segment, address: 6062 - 606D (0xc bytes), align: 1
   Segment part 51.            Intra module refs:   HWResetRF
                                                    SetRFOn
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           PHYMCLKSoftDelay1ms     6054 
+           PHYMCLKSoftDelay1ms     6062 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 5FB8 - 5FDB (0x24 bytes), align: 1
@@ -705,12 +706,12 @@ DATA16_I
                                    5F34 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6034 - 6043 (0x10 bytes), align: 1
+  Relative segment, address: 6044 - 6053 (0x10 bytes), align: 1
   Segment part 57.            Intra module refs:   API_Get_All_IntStatus
                                                    API_PART_INFO
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           API_SendCommand         6034 
+           API_SendCommand         6044 
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
@@ -721,14 +722,6 @@ DATA16_I
            =====                   =======         ======
            API_GetResponse         5E70 
                calls direct
-    -------------------------------------------------------------------------
-DATA16_Z
-  Relative segment, address: 1C03 - 1C03 (0x1 bytes), align: 0
-  Segment part 46.            Intra module refs:   SetRFOff
-                                                   SetRFOn
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           g_uchrRFMode            1C03 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 5D38 - 5DAB (0x74 bytes), align: 1
@@ -753,26 +746,34 @@ DATA16_Z
            API_PART_INFO           5F64 
                calls direct
     -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1C03 - 1C03 (0x1 bytes), align: 0
+  Segment part 46.            Intra module refs:   SetRFOff
+                                                   SetRFOn
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           g_uchrRFMode            1C03 
+    -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6060 - 6069 (0xa bytes), align: 1
+  Relative segment, address: 606E - 6077 (0xa bytes), align: 1
   Segment part 83.            Intra module refs:   HWResetRF
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           LedRedOn                6060 
+           LedRedOn                606E 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 606A - 6073 (0xa bytes), align: 1
+  Relative segment, address: 6082 - 608B (0xa bytes), align: 1
   Segment part 84.            Intra module refs:   HWResetRF
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           LedRedOff               606A 
+           LedRedOff               6082 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6074 - 607D (0xa bytes), align: 1
+  Relative segment, address: 6078 - 6081 (0xa bytes), align: 1
   Segment part 86.            Intra module refs:   HWResetRF
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           SetRFOff                6074 
+           SetRFOff                6078 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
   Relative segment, address: 5FDC - 5FF9 (0x1e bytes), align: 1
@@ -799,11 +800,11 @@ DATA16_Z
                calls direct
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 607E - 6085 (0x8 bytes), align: 1
+  Relative segment, address: 6054 - 6061 (0xe bytes), align: 1
   Segment part 109.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           main                    607E            Segment part 27 (?cstart)
+           main                    6054            Segment part 27 (?cstart)
                calls direct
     -------------------------------------------------------------------------
 DATA16_ID
@@ -822,11 +823,11 @@ DATA16_ID
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6092 - 6093 (0x2 bytes), align: 1
+  Relative segment, address: 6098 - 6099 (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            6092            __exit (?__exit)
+           __DebugBreak            6098            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -848,14 +849,14 @@ DATA16_ID
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 608E, align: 1
+  Relative segment, address: 608C, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   608E            exit (?exit)
+           _exit                   608C            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 608E - 6091 (0x4 bytes), align: 1
+  Relative segment, address: 608C - 608F (0x4 bytes), align: 1
   Segment part 6.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -884,7 +885,7 @@ CODE_I
   Segment part 5.
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 6094, align: 1
+  Relative segment, address: 609A, align: 1
   Segment part 6.
     -------------------------------------------------------------------------
 DATA20_Z
@@ -896,11 +897,11 @@ DATA20_I
   Segment part 8.
     -------------------------------------------------------------------------
 DATA20_ID
-  Relative segment, address: 6094, align: 1
+  Relative segment, address: 609A, align: 1
   Segment part 9.
     -------------------------------------------------------------------------
 DATA20_C
-  Relative segment, address: 6094, align: 1
+  Relative segment, address: 609A, align: 1
   Segment part 10.
     -------------------------------------------------------------------------
 DATA20_N
@@ -941,7 +942,7 @@ CSTART
            ?cstart_end             5C2A 
     -------------------------------------------------------------------------
 CODE_ID
-  Relative segment, address: 6094, align: 1
+  Relative segment, address: 609A, align: 1
   Segment part 28.            Intra module refs:   Segment part 5
 
     -------------------------------------------------------------------------
@@ -962,11 +963,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 608A - 608D (0x4 bytes), align: 1
+  Relative segment, address: 6094 - 6097 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    608A            Segment part 27 (?cstart)
+           exit                    6094            Segment part 27 (?cstart)
                calls direct
 
     -------------------------------------------------------------------------
@@ -987,18 +988,18 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6044 - 6053 (0x10 bytes), align: 1
+  Relative segment, address: 6034 - 6043 (0x10 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memzero        6044            ?cstart_init_zero (?cstart)
+           __data16_memzero        6034            ?cstart_init_zero (?cstart)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6086 - 6089 (0x4 bytes), align: 1
+  Relative segment, address: 6090 - 6093 (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memcpy         6086            ?cstart_init_copy (?cstart)
+           __data16_memcpy         6090            ?cstart_init_copy (?cstart)
                calls direct
 
 
@@ -1037,10 +1038,10 @@ CSTACK                                 5B60 - 5BFF              A0   rel    1
 DATA16_C                                  5C00                       dse    0
 DATA16_ID                              5C00 - 5C01               2   rel    1
 CSTART                                 5C02 - 5C29              28   rel    1
-<CODE> 1                               5C2A - 6093             46A   rel    1
-CODE_ID                                   6094                       rel    1
-DATA20_ID                                 6094                       rel    1
-DATA20_C                                  6094                       rel    1
+<CODE> 1                               5C2A - 6099             470   rel    1
+CODE_ID                                   609A                       rel    1
+DATA20_ID                                 609A                       rel    1
+DATA20_C                                  609A                       rel    1
 RESET                                  FFFE - FFFF               2   rel    1
 
                 ****************************************
@@ -1049,7 +1050,7 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 1 172 bytes of CODE  memory
+ 1 178 bytes of CODE  memory
    164 bytes of DATA  memory (+ 76 absolute )
      2 bytes of CONST memory
 

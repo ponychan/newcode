@@ -966,7 +966,7 @@
             <IarPane-34102>
                 <expressions>
                     <item>DeviceInfo</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
