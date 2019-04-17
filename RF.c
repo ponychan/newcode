@@ -21,6 +21,7 @@
 
 /*APIÁÐ±í£º
 API_POWER_UP
+API_PART_INFO
 
 */
 
