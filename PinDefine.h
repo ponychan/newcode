@@ -132,7 +132,6 @@ API接口可以做的事情：向射频芯片发送命令\读取状态信息
 #define CMD_GET_INT_STATUS  0x20//返回所有可能的中断事件（STATUS和PENDING）的中断状态。可选地，它可以用于清除锁存（PENDING）中断事件。
 #define CMD_REQUEST_DEVICE_STATE 0x33//返回当前的河北状态和频段
 #define CMD_CHANGE_STATE    0x34//手动将芯片切换到所需的操作状态。
-//    #define CMD_OFFLINE_RECAL   0x38//由于温度变化而重新校准。B1版本API没有本条
 #define CMD_READ_CMD_BUFF   0x44//用于读取CTS和命令响应。
 #define CMD_FRR_A_READ      0x50//从FRR_A开始读取快速响应寄存器（FRR）。
 #define CMD_FRR_B_READ      0x51//从FRR_B开始读取快速响应寄存器（FRR）。
@@ -142,10 +141,8 @@ API接口可以做的事情：向射频芯片发送命令\读取状态信息
 /*IR_CAL_COMMANDS*/
 #define CMD_IRCAL           0x17//图像抑制校准。
 #define CMD_IRCAL_MANUAL    0x1a
-//    #define CMD_IRCAL_MANUAL    0x19//手动图像抑制校准。B1版本API没有本条
 /*TX_COMMANDS*/
 #define CMD_START_TX        0x31//切换到手动状态并开始传送数据包
-//    #define CMD_TX_HOP          0x37//在TX中跳到新频率B1版本API没有本条
 #define CMD_WRITE_TX_FIFO   0x66//将数据字节写入发送队列
 /*RX_COMMANDS*/
 #define CMD_PACKET_INFO     0x16//返回有关接收的最后一个数据包中变量字段长度的信息，并（可选）覆盖字段长度。
