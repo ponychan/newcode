@@ -19,7 +19,9 @@
 #define RF_LISTEN_RSSI    -75//-95//-100//0xCE //ÎÞÏßÍ¨ÐÅÕìÌý·¶Î§ÔØ²¨ÐÅºÅÏÂÏÞ¹¦ÂÊÖµ-100dBm
 #define RF_RSSI_LOGON    RF_TRANSMIT_RSSI //Éè¶¨×¢²áÐÅºÅÇ¿¶ÈÏÂÏÞÖµ£¬ºÍÉè±¸´«Êä·¶Î§ÐÅºÅ¹¦ÂÊÖµÏàÍ¬£­90dBm
 
-/*APIÁÐ±í£º
+/*
+ckbµÄ×¢ÊÍ£¬ÆäËûÈËÇëºöÂÔ
+APIÁÐ±í£º
 API_POWER_UP
 API_PART_INFO
 
@@ -82,9 +84,9 @@ uchar API_Get_All_IntStatus(uchar IntStatusLength,uchar *IntStatus)
 {
     unsigned char API_WRITER[4];
     API_WRITER[0]=CMD_GET_INT_STATUS;
-    API_WRITER[1]=0x00;
-    API_WRITER[2]=0x00;
-    API_WRITER[3]=0x00;
+    API_WRITER[1]=0x00;//Çå³ý°ü´¦ÀíÆ÷µÄËùÓÐÖÐ¶Ï
+    API_WRITER[2]=0x00;//Çå³ýµ÷ÖÆ½âµ÷Æ÷µÄËùÓÐÖÐ¶Ï
+    API_WRITER[3]=0x00;//Çå³ýÐ¾Æ¬×´Ì¬ÖÐ¶Ï
     API_SendCommand(0x04,API_WRITER);
     if(API_GetResponse(IntStatusLength,IntStatus)==0)
         return 0x00;
@@ -299,14 +301,16 @@ void API_FIFO_INFO(uchar *FIFO_INFO)
       GPIO3: GPIO3ÅäÖÃ·½Ê½
  ·µ»ØÖµ£ºÎÞ
 ²Î¿¼£ºGPIO0£º0X20£¬GPIO1£º0X21
+	½ûÓÃÉÏÀ­µç×è£¨Èç¹ûÒý½ÅÓÉÍâ²¿Ô´Çý¶¯£¬¶ø·Ç¿ªÂ©Ô´£¬Ôò½¨ÒéÉèÖÃ£©¡£
  ***************************************************************/
 void API_GPIO_CFG(uchar GPIO0,uchar GPIO1,uchar GPIO2,uchar GPIO3)
 {
     unsigned char API_WRITER[8];
     API_WRITER[0]=CMD_GPIO_PIN_CFG; API_WRITER[1]=GPIO0;
     API_WRITER[2]=GPIO1;            API_WRITER[3]=GPIO2;
-    API_WRITER[4]=GPIO3;             API_WRITER[5]=0x00;
-    API_WRITER[6]=0x00;             API_WRITER[7]=0x00; 
+    API_WRITER[4]=GPIO3;             API_WRITER[5]=0x00;//NIRQ
+    API_WRITER[6]=0x00; //SDO
+    API_WRITER[7]=0x00; //ÅäÖÃÎªÊä³öµÄÒý½ÅµÄÇý¶¯ÄÜÁ¦ÉèÖÃ
     API_SendCommand(0x08,API_WRITER);
     //API_WaitforCTS();
  }
@@ -331,7 +335,7 @@ void API_POWER_UP()
 
 /*ÉèÖÃºÍ¶ÁÈ¡¼Ä´æÆ÷*/
 /**********************************************************************
-¼Ä´æÆ÷µÄÉèÖÃ£¬¶ÔÍ¬Ò»¸ö×éµÄ¶à¸ö¼Ä´æÆ÷Á¬Ðø½øÐÐÉèÖÃ
+¼Ä´æÆ÷µÄÉèÖÃ£¬¶ÔÍ¬Ò»¸ö×éµÄ¶à¸ö¼Ä´æÆ÷Á¬Ðø½øÐÐÉèÖÃ£¨×î¶àÒ»´ÎÅäÖÃ12¸öÊôÐÔ£©
 ÐÎ²Î£ºgroup£º¼Ä´æÆ÷ËùÊôµÄ×é
       num_pro£ºÐèÒªÁ¬ÐøÉèÖÃ¼Ä´æÆ÷µÄ¸öÊý
      start_pro£ºÉèÖÃ¼Ä´æÆ÷×éµÄ³õÊ¼µØÖ·
@@ -371,7 +375,14 @@ uchar API_SET_PROPERTY_X(unsigned char group,unsigned char num_pro,unsigned char
 /**********************************************************************
 ¶ÔÒ»¸ö¼Ä´æÆ÷½øÐÐÉèÖÃ
 ÐÎ²Î£ºgroup:¸Ã¼Ä´æÆ÷ËùÊôµÄ×é\address£º¸Ã¼Ä´æÆ÷µÄµØ\Data£º¶Ô¸Ã¼Ä´æÆ÷ÅäÖÃµÄÊý¾Ý
-·µ»ØÖµ£º0£º¶Ô¼Ä´æÆ÷µÄÉèÖÃ³É¹¦ 1£º¶Ô¼Ä´æÆ÷µÄÉèÖÃÊ§°Ü*/
+·µ»ØÖµ£º0£º¶Ô¼Ä´æÆ÷µÄÉèÖÃ³É¹¦ 1£º¶Ô¼Ä´æÆ÷µÄÉèÖÃÊ§°Ü
+API_WRITER[0]´ú±íÉèÖÃ²ÎÊýÃüÁî
+API_WRITER[1]´ú±í¸Ã¼Ä´æÆ÷ËùÊôµÄ×é
+API_WRITER[2]´ú±íÖ»Ð´ÈëÒ»¸öÌØÐÔ²ÎÊý*
+API_WRITER[3]´ú±íÒªÐ´ÈëµÄÌØÐÔµÄµØÖ·/Æ«ÒÆÁ¿
+API_WRITER[4]´ú±íÕâ¸öÌØÐÔµÄÖµ
+Èç¹ûÐ´Èë³É¹¦£¬»á¶Áµ½CTSÐÅºÅ£¬·ñÔòÈÏÎªÊ§°Ü
+ÕâÑùµÄÐ´Èë²¢²»±£Ö¤»áÁ¢¼´ÉúÐ§£¡£¡£¡Ö»ÓÐÔÚÄÇ¸öÊôÐÔ±»ÓÃµ½µÄÊ±ºò²Å»áÉúÐ§*/
 uchar API_SET_PROPERTY_1(unsigned char group,unsigned char address,unsigned char Data)
 {
     uchar API_WRITER[5];
@@ -435,3 +446,13 @@ uchar API_CHANGE_STATE(uchar RFStatus)       //Ê¹ÓÃ¸Ã´úÂëÍê³ÉÊ±ÉäÆµÄ£¿é½øÈëµ½ÏàÓ
         return 0x01;
     return 0x00;
 } 
+/*»ñÈ¡Ð¾Æ¬×´Ì¬£¬´«Èë²ÎÊýÊÇÁ½¸ö£¬0ÊÇÉäÆµµÄ×´Ì¬£¬1ÊÇÉäÆµµÄÆµ¶Î*/
+uchar API_REQUEST_DEVICE_STATE(uchar *RFStatus)
+{
+    uchar API_WRITER=CMD_REQUEST_DEVICE_STATE;
+    uchar Response[2];
+    API_SendCommand(0x01,API_WRITER);
+    if(API_GetResponse(2,Response)==0)
+        return 0x00;
+    return 0x01; 
+}

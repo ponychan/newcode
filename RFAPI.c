@@ -422,6 +422,7 @@ void SetRFStartTx(void)
     } 
 }
 //使用START_TX命令的发送函数     ..频道号间隔3倍
+/*设定射频进入发射模式，如果进入失败，就重启射频芯片，重新初始化*/
 void SetRFTx()    //size使用uchar类型，最多发送个字节数只能是255
 {
     /****************************************/
@@ -433,10 +434,11 @@ void SetRFTx()    //size使用uchar类型，最多发送个字节数只能是255
     unsigned char RFStatus[2]; //存储请求设备状态的返回数据
     unsigned char Command_Tx[5];
     Command_Tx[0]=CMD_START_TX;
-    //Command_Tx[1]=g_uchRFSelfFreNum*3;   //使用跳频代码改变工作频道号
-    Command_Tx[2]=0x30;     //发送完成后不退出发送模式
+    Command_Tx[1]=g_uchRFSelfFreNum*3;   //使用跳频代码改变工作频道号
+    Command_Tx[2]=0x30;     //发送完成后，进入3-ready模式，不退出发送模式
     Command_Tx[3]=0x00;
     Command_Tx[4]=0x00;
+    /*此字段为零，则要传输的数据字节数由PKT_FIELD_X_LENGTH属性的值指定。在这种情况下，有效载荷长度限制为5 x 8191 = 40955字节（因为五个数据字段中的每一个都可以配置为8191字节的长度）。如果需要特定于场的处理（例如，一个场上的数据白化而不是另一个场上的数据白化，一个场上的曼彻斯特编码而不是另一场上的数据，等等），则该方法是必要的*/
     while(1)
     {
         unsigned char trytimes=0;
